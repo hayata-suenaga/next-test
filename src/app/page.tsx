@@ -2,6 +2,19 @@ import Link from "next/link";
 import prisma from "@/app/db";
 import TodoItem from "@/components/TodoItem";
 
+async function toggleTodoItem(id: string, complete: boolean) {
+  "use server";
+
+  await prisma.todo.update({
+    where: {
+      id,
+    },
+    data: {
+      complete,
+    },
+  });
+}
+
 export default async function Home() {
   const todos = await prisma.todo.findMany();
 
@@ -18,7 +31,7 @@ export default async function Home() {
       </header>
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} toggleTodoItem={toggleTodoItem} />
         ))}
       </ul>
     </>
