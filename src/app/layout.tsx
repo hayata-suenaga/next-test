@@ -1,3 +1,4 @@
+import Shell from "@/components/Shell";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -14,11 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} bg-slate-800 text-slate-100 container mx-auto  p-4`}
-      >
-        {children}
+    <html lang="en" className="h-full bg-white">
+      <body className={`${inter.className} bg-white`}>
+        <Shell>{children}</Shell>
       </body>
     </html>
   );
