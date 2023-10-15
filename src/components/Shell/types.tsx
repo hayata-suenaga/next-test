@@ -4,7 +4,6 @@ type MenuItem = {
   name: string;
   href: string;
   icon: ElementType;
-  current: boolean;
 };
 
 export type SideBarProps = {
