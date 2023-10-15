@@ -1,19 +1,19 @@
 import {
-  CalendarIcon,
   ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
   HomeIcon,
-  UsersIcon,
+  ReceiptPercentIcon,
+  CurrencyDollarIcon,
+  AdjustmentsVerticalIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
 export const mainMenuItems = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Reports", href: "#", icon: ReceiptPercentIcon, current: false },
+  { name: "Expenses", href: "#", icon: CurrencyDollarIcon, current: false },
+  { name: "Budgets", href: "#", icon: AdjustmentsVerticalIcon, current: false },
+  { name: "Insights", href: "#", icon: ChartPieIcon, current: false },
+  { name: "Policies", href: "#", icon: UserGroupIcon, current: false },
 ];
 export const teamMenuItems = [
   { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
