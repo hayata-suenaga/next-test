@@ -1,11 +1,14 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { SideBarProps } from "./types";
 import { classNames } from "./utils";
+import { usePathname } from "next/navigation";
 
 export default function StaticSideBar({
   menuItems,
   subMenuItems,
 }: SideBarProps) {
+  const pathname = usePathname().slice(1) || "/";
+
   return (
     <>
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
@@ -26,7 +29,7 @@ export default function StaticSideBar({
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current
+                          item.href === pathname
                             ? "bg-gray-800 text-white"
                             : "text-gray-400 hover:text-white hover:bg-gray-800",
                           "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
@@ -52,7 +55,7 @@ export default function StaticSideBar({
                       <a
                         href={item.href}
                         className={classNames(
-                          item.current
+                          item.href === pathname
                             ? "bg-gray-800 text-white"
                             : "text-gray-400 hover:text-white hover:bg-gray-800",
                           "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"

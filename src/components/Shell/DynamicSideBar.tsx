@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import { SideBarProps } from "./types";
 import { classNames } from "./utils";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
@@ -6,6 +7,8 @@ export default function DynamicSideBar({
   menuItems,
   subMenuItems,
 }: SideBarProps) {
+  const pathname = usePathname();
+
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
       <div className="flex h-16 shrink-0 items-center">
@@ -24,7 +27,7 @@ export default function DynamicSideBar({
                   <a
                     href={item.href}
                     className={classNames(
-                      item.current
+                      item.href === pathname
                         ? "bg-gray-800 text-white"
                         : "text-gray-400 hover:text-white hover:bg-gray-800",
                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
@@ -50,7 +53,7 @@ export default function DynamicSideBar({
                   <a
                     href={item.href}
                     className={classNames(
-                      item.current
+                      item.href === pathname
                         ? "bg-gray-800 text-white"
                         : "text-gray-400 hover:text-white hover:bg-gray-800",
                       "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
