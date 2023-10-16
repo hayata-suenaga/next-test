@@ -1,5 +1,5 @@
-import SessionProvider from "@/components/SessionProvider";
-import Shell from "@/components/Shell";
+import SessionProvider from "@/app/(authenticated)/components/SessionProvider";
+import Shell from "@/app/(authenticated)/components/Shell";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
