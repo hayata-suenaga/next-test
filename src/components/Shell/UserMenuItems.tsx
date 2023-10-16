@@ -40,7 +40,7 @@ export default function UserMenuItems() {
               )}
               onClick={() => signOut()}
             >
-              Profile
+              Sign out
             </p>
           )}
         </Menu.Item>
