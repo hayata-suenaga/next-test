@@ -35,8 +35,3 @@ export const teamMenuItems = [
   { id: 2, name: "Design", href: "#", initial: "D" },
   { id: 3, name: "Marketing", href: "#", initial: "M" },
 ];
-
-export const userMenuItems = [
-  { name: "Your profile", href: "#" },
-  { name: "Sign out", href: "#" },
-];
