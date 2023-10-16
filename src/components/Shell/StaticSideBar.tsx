@@ -2,6 +2,7 @@ import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { SideBarProps } from "./types";
 import { classNames } from "./utils";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function StaticSideBar({
   menuItems,
@@ -26,7 +27,7 @@ export default function StaticSideBar({
                 <ul role="list" className="-mx-2 space-y-1">
                   {menuItems.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className={classNames(
                           item.href === pathname
@@ -40,7 +41,7 @@ export default function StaticSideBar({
                           aria-hidden="true"
                         />
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -52,7 +53,7 @@ export default function StaticSideBar({
                 <ul role="list" className="-mx-2 mt-2 space-y-1">
                   {subMenuItems.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className={classNames(
                           item.href === pathname
@@ -65,13 +66,13 @@ export default function StaticSideBar({
                           {item.initial}
                         </span>
                         <span className="truncate">{item.name}</span>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </li>
               <li className="mt-auto">
-                <a
+                <Link
                   href="#"
                   className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                 >
@@ -80,7 +81,7 @@ export default function StaticSideBar({
                     aria-hidden="true"
                   />
                   Settings
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

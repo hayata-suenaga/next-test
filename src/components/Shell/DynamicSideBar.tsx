@@ -2,6 +2,7 @@ import { usePathname } from "next/navigation";
 import { SideBarProps } from "./types";
 import { classNames } from "./utils";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function DynamicSideBar({
   menuItems,
@@ -24,7 +25,7 @@ export default function DynamicSideBar({
             <ul role="list" className="-mx-2 space-y-1">
               {menuItems.map((item) => (
                 <li key={item.name}>
-                  <a
+                  <Link
                     href={item.href}
                     className={classNames(
                       item.href === pathname
@@ -38,7 +39,7 @@ export default function DynamicSideBar({
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -50,7 +51,7 @@ export default function DynamicSideBar({
             <ul role="list" className="-mx-2 mt-2 space-y-1">
               {subMenuItems.map((item) => (
                 <li key={item.name}>
-                  <a
+                  <Link
                     href={item.href}
                     className={classNames(
                       item.href === pathname
@@ -63,19 +64,19 @@ export default function DynamicSideBar({
                       {item.initial}
                     </span>
                     <span className="truncate">{item.name}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </li>
           <li className="mt-auto">
-            <a
+            <Link
               href="#"
               className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
             >
               <Cog6ToothIcon className="h-6 w-6 shrink-0" aria-hidden="true" />
               Settings
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
