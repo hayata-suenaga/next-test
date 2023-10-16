@@ -8,7 +8,7 @@ export default function DynamicSideBar({
   menuItems,
   subMenuItems,
 }: SideBarProps) {
-  const pathname = usePathname();
+  const pathname = usePathname().slice(1) || "/";
 
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
