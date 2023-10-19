@@ -63,7 +63,7 @@ function AuthProviderComponent({
   return (
     <button
       onClick={onClick}
-      className={`flex w-full items-center justify-center gap-3 rounded-md bg-[${color}] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[${color}]`}
+      className={`flex w-full items-center justify-center gap-3 rounded-md bg-[#1D9BF0] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]`}
     >
       <Icon className="w-5 h-5" />
       <span className="text-sm font-semibold leading-6">{providerName}</span>
